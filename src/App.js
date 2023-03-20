@@ -1,8 +1,7 @@
 import React from 'react';
-import './App.css';
 import axios from 'axios';
 import { useState } from 'react';
-import { TextField, Button} from '@mui/material'
+import { Box, Typography, List, ListItem, TextField, Button} from '@mui/material'
 
 function App() {
   const [repos, setRepos] = useState({});
@@ -23,27 +22,41 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <Box className="App">
       <header className="App-header">        
-        <p>
+        <Typography variant="h4">
           SEB Code Challenge
-        </p>
-
+        </Typography>
         <form>
           <TextField
             onChange={(evt) => {
               setSearch(evt.target.value)
             }}
           ></TextField>
+
           <Button
+            sx={{m:1}}
             variant="contained"
             onClick={fetchRepos} 
           >
             Search
           </Button>
+          
         </form>
+        <Typography 
+          fontWeight="bold"
+          sx={{p:1}}
+        >Name and Star Count</Typography>
+        <List>
+          {repos.items && repos.items.map(repo => (
+            <ListItem>
+              <Typography sx={{p:1}}>{repo.name}</Typography>
+              <Typography sx={{p:1}}>{repo.stargazers_count}</Typography>
+            </ListItem>
+          ))}
+        </List>
       </header>
-    </div>
+    </Box>
   );
 }
 
