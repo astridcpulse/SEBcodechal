@@ -1,7 +1,9 @@
 
 ## Available Scripts
 
-download the repo. Run <kgd> npm install <kgd> in the command line
+download the repo. Run <kbd> npm install <kbd> in the command line
 
 ### `npm start`
+
+
 
