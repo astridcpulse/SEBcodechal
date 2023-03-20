@@ -46,7 +46,7 @@ function App() {
         <Typography 
           fontWeight="bold"
           sx={{p:1}}
-        >Name and Star Count</Typography>
+        > Repo Name and Star Count</Typography>
         <List>
           {repos.items && repos.items.map(repo => (
             <ListItem>
