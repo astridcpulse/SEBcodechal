@@ -11,10 +11,10 @@ function App() {
   const fetchRepos = () => {
     axios({
       method: 'GET',
-      url: '/github',
-      data: search
+      url: `https://api.github.com/search/repositories?q=language:${search}&sort=stars&order=desc&per_page=5`
     })
       .then(res => {
+          console.log(res.data);
           setRepos(res.data);
       })
       .catch(err => {
